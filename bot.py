@@ -44,7 +44,10 @@ def handle_contact_add(command):
 
     address_book.add_record(record)
 
-    return f'Contact {name} added with phone number: {phone}'
+    if birthday:
+        return f'Contact {name} added with phone number: {phone} and birthday: ' + str(birthday[0])
+    else:
+        return f'Contact {name} added with phone number: {phone}'
 
 
 @handle_error
