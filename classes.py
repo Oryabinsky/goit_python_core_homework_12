@@ -35,7 +35,7 @@ class Field:
         return self.__value == other
 
     def __ne__(self, other):
-        return self.__value == other
+        return self.__value != other
 
     def __str__(self):
         return str(self.__value)
@@ -44,11 +44,6 @@ class Field:
 class Name(Field):
     def __init__(self, name):
         super().__init__(name)
-
-    def is_valid(self, name):
-        if not name.isalpha():
-            return False, f'Invalid contact name "{name}"! Must be contain alpha letters'
-        return True, None
 
 
 class Phone(Field):
